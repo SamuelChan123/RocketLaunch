@@ -1,0 +1,24 @@
+<ion-view title="List of Launches">
+    <ion-nav-bar class="bar-positive">
+    </ion-nav-bar>
+    <ion-content overflow-scroll="true" padding="true" class="has-header" style="background: url(img/ZDjsWQ5PSRCR3WEBt5BN_HD-Blue-Galaxy-Wallpaper-for-Desktop.jpg) no-repeat center;background-size:cover;">
+        <ion-list id="list-list2" class="bar-positive">
+
+            <head>
+                <script src="timing.js"></script>
+            </head>
+
+            <body>
+                <ion-item class="item-avatar" id="list-list-item4" ng-repeat="launch in launches" ui-sref="launch({id:launch.id})">
+                    <img src="{{launch.img}}">
+                    <div>
+                        <h2>Rocket Launch: {{launch.name}}</h2>
+                        <div ng-controller="TimingCtrl">
+                            <p>T-{{ CountDown.days }} Days {{ CountDown.hours }}:{{ CountDown.minutes}}:{{ CountDown.seconds }}</p>
+                        </div>
+                    </div>
+            </body>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view title="Launch Page">
+        <ion-nav-bar class="bar-royal">
+    </ion-nav-bar>
+    <ion-nav-title>{{launch.name}}</ion-nav-title>
+    <ion-content overflow-scroll="true" padding="true" class="has-header" style="background: url(img/G1mkK5hRRIymQtEjoNql_HD-Blue-Galaxy-Wallpaper-for-Desktop.jpg) no-repeat center;background-size:cover;">
+        <div class="item item-body" id="item-list-item-container2">
+            <img src="{{launch.img}}" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+            <div ng-module="">
+                <p style="font-size:20px">
+                    <u>Information</u>
+                </p>
+                <p>Name of Rocket: {{launch.name}}
+                    <!--//<br>Launch time: {{launch.time}}
+                    <br>Launch Date: {{launch.date | date}} ng-controller="TimingCtrl"-->
+                    <br>Launch Date/Time: {{launch.datetime}} GMT
+                    <br>Launch Site: {{launch.site}}
+                    <br>Other information: {{launch.other}}
+                    
+                    
+                </p>
+            </div>
+
+        </div>
+     
+    </ion-content>
+</ion-view>
