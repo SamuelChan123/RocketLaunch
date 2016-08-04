@@ -1,6 +1,7 @@
 angular.module('app.controllers', [])
 
-    .controller('startCtrl', function ($scope, LaunchService, $timeout, $state) {
+    .controller('startCtrl', function ($ionicNavBarDelegate, $scope, LaunchService, $timeout, $state) {
+        $ionicNavBarDelegate.showBackButton(true);
         function activate() {
             $timeout(function () {
                 $state.go('listoflaunches')
@@ -9,8 +10,8 @@ angular.module('app.controllers', [])
         activate();
     })
 
-    .controller('listoflaunchesCtrl', function ($scope, LaunchService, $ionicNavBarDelegate) {
-        $ionicNavBarDelegate.showBackButton(false);
+    .controller('listoflaunchesCtrl', function ($ionicNavBarDelegate, $scope, LaunchService) {
+        $ionicNavBarDelegate.showBackButton(true);
         $scope.launches = [];
 
         LaunchService.getLaunches().then(function (res) {
@@ -21,7 +22,6 @@ angular.module('app.controllers', [])
     })
 
     .controller('TimingCtrl', function ($scope, $interval, $stateParams, LaunchService) {
-
         /*$scope.launches = [];
 
         LaunchService.getLaunches().then(function (res) {
@@ -85,8 +85,10 @@ angular.module('app.controllers', [])
         $scope.CountDown.initializeClock(deadline);
     })
 
-    .controller('launchCtrl', function ($scope, $stateParams, LaunchService, $ionicNavBarDelegate) {
-        $ionicNavBarDelegate.showBackButton(true);
+    .controller('launchCtrl', function ($ionicNavBarDelegate, $scope, $stateParams, LaunchService) {
+        $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+            viewData.enableBack = true;
+        });
         $scope.launch = {};
         LaunchService.getLaunch($stateParams.id).then(function (res) {
             $scope.launch = res;
