@@ -1,4 +1,4 @@
-<ion-view title="List of Launches">
+<ion-view title="Upcoming Launches">
     
     <ion-nav-bar class="bar-positive">
     </ion-nav-bar>
@@ -13,7 +13,7 @@
                 <ion-item class="item-avatar" id="list-list-item4" ng-repeat="launch in launches" ui-sref="launch({id:launch.id})">
                     <img src="{{launch.img}}">
                     <div>
-                        <h2>Rocket Launch: {{launch.name}}</h2>
+                        <h2>Launch: {{launch.name}}</h2>
                         <div ng-controller="TimingCtrl">
                             <p>T-{{ CountDown.days }} Days {{ CountDown.hours }}:{{ CountDown.minutes}}:{{ CountDown.seconds }}</p>
                         </div>
