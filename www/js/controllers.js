@@ -5,7 +5,7 @@ angular.module('app.controllers', [])
         function activate() {
             $timeout(function () {
                 $state.go('listoflaunches')
-            }, 2500)
+            }, 2000)
         }
         activate();
     })
