@@ -7,5 +7,6 @@ Further Work: 1. Get the app on the apple app store or google play store. 2. Fin
 Recently Completed:
 8.10.16 Removed a few annoying images (previously added ASPIRE, APL images in, along with "Created by Sam Chan + Mentor Chris Krupiarz")
 8.10.16 Added more launches to Fieldbook launches, for a total of 9, up to around 43 days out.
+
 -----------------------------------
 More coming...
