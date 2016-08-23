@@ -65,9 +65,22 @@ angular.module('app.controllers', [])
                 function updateClock() {
                     var t = $scope.CountDown.getTimeRemaining(endtime);
 
+                    if (t.total < 86400000) {
+                        // Notification that the rocket will launch in 24 hours
+                    }
+                    
+                    if (t.total < 3600000) {
+                        // Notification that the rocket will launch in 1 hour
+                    }        
+                    
+                    if (t.total < 600000) {
+                        // Notification that the rocket will launch in 10 min
+                    }        
+
                     if (t.total < 0) {
+                        // Notification that the rocket has launched
+                        // alert("Rocket " + $scope.launch.name + " has launched.");
                         $interval.cancel(timeinterval);
-                        alert("The Rocket " + $scope.launch.name + " has launched.");
                         return true
                     }
                     $scope.CountDown.days = t.days < 10 ? '0' + t.days : t.days;
